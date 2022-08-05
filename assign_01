@@ -1,0 +1,78 @@
+
+
+/*Customer table */
+CREATE table Customer(
+  Cust_id Int,
+  Cust_name varchar(255)
+);
+
+INSERT INTO Customer
+VALUES(23,"Prinka");
+INSERT INTO Customer
+VALUES(43,"Saras");
+INSERT INTO Customer
+VALUES(002,"shashi");
+INSERT INTO Customer
+VALUES(23,"shyam");
+
+/*Item table */
+CREATE table item(
+  item_id Int,
+  item_name varchar(255),
+  price Int
+);
+
+INSERT INTO item
+VALUES(5,"Pen",5);
+INSERT INTO item
+VALUES(5,"pencil", 10);
+INSERT INTO item
+VALUES(333,"Book", 430);
+INSERT INTO item
+VALUES(23,"scale", 5);
+
+/*Sale table */
+
+CREATE table sales(
+bill_no Int,
+bill_date DATE,
+cust_id Int, 
+item_id Int,
+qty_sold Int
+);
+
+INSERT INTO sales
+values(456, '2022-08-05', 5, 455544, 34);
+INSERT INTO sales
+values(299, '2004-02-22', 244, 43344, 54);
+INSERT INTO sales
+values(005, '2012-12-08', 5, 1132534, 22);
+INSERT INTO sales
+values(654, '2015-01-01', 222, 1231334, 87);
+
+/*SELECT * FROM Customer;
+SELECT * FROM item;
+SELECT * FROM sales*/
+
+-- SELECT * FROM sales
+-- WHERE cust_id = 5;
+
+-- SELECT * FROM sales
+-- WHERE bill_date = CURRENT_date();
+
+SELECT * FROM item
+WHERE price > 100;
+
+SELECT bill_no , cust_id FROM sales
+WHERE bill_date = CURRENT_DATE();
+
+SELECT Cust_name FROM Customer
+WHERE cust_id = 002;
+
+DELETE FROM sales
+WHERE cust_id = 005;
+
+SELECT * FROM sales;
+
+
+
