@@ -1,0 +1,102 @@
+
+
+create table Department (
+DNAME char(2),
+DNO int,
+DRegNO int,
+DRegDate DATE,
+
+PRIMARY KEY(DNO)
+
+);
+
+-- DESCRIBE Department;
+
+INSERT INTO Department
+value("CS", 5,231, "2018-07-23");
+
+INSERT INTO Department
+value("IT", 2, 153, "2018-07-19");
+
+INSERT INTO Department
+value("CA", 3, 131, "2016-05-15");
+
+INSERT INTO Department
+value("ME", 1 ,561, "2018-06-19");
+
+INSERT INTO Department
+value("PI", 4 ,731, "2000-07-10");
+
+select * from Department;
+
+
+create table Employee (
+FNAME varchar(255),
+MNIT char(1),
+LNAME varchar(255),
+SSN char(10),
+BDATE DATE,
+ADDRESS text,
+SEX char(1),
+SALARY char(10),
+SUPRESSN char(10),
+DNO int, 
+
+PRIMARY KEY(SSN),
+FOREIGN KEY (DNO) references Department(DNO)
+);
+
+insert INTO Employee
+value("john", 'S', "Smith","1234567899", "1966-01-09", "731, fondon, houston, TX", 'M', "30000","303445555", 5);
+
+insert INTO Employee
+value("Franih", 'T', "Wang","1234544899", "1966-01-11", "608, vonn, houston, TX", 'M', "40000","223445555", 5);
+
+insert INTO Employee
+value("zetiya", 'J', "alicia","233267899", "1999-01-09", "331, newhoe, virgis, BF", 'F', "24000","7667645555", 4);
+
+insert INTO Employee
+value("jennif", 'S', "Walace","1222212899", "1980-01-09", "798, rokku, granmd, CG", 'F', "65500","7676675555", 4);
+
+insert INTO Employee
+value("amosh", 'K', "Walese","0909092899", "1980-09-11", "121, goloo, vividdd, CG", 'M', "88500","9898675555", 5);
+
+insert INTO Employee
+value("Jopyoa", 'A', "Enmliah","9898712899", "1999-01-09", "798, rokku, sohini, KG", 'F', "34500","9887675555", 5);
+
+insert INTO Employee
+value("fang", 'V', "Nubbs","9887212899", "1998-01-11", "988, round, granmd, FX", 'M', "25500","9812675555", 4);
+
+insert INTO Employee
+value("Bong", 'E', "aali","1222218767", "1977-01-09", "111, fathepur, kaupur, UP", 'M', "67500","7676674545", 1);
+
+-- select * from Employee;
+
+-- select * from Employee where fname like "a%";
+-- select * from Employee where fname like "%a";
+-- select * from Employee where fname like "%a%";
+-- select * from Employee
+-- ORDER BY fname desc;
+
+ 
+-- select MAX(SALARY) AS LargestSalary
+-- FROM Employee;
+
+-- select MIN(SALARY) AS SmallestSalary
+-- FROM Employee;
+
+-- select AVG(SALARY) AS AverageSalary
+-- FROM Employee;
+
+-- select SUM(SALARY) AS TotalSalary
+-- FROM Employee;
+
+-- SELECT DNO , MAX(SALARY) as maxDeptSal from Employee group by DNO;
+
+-- SELECT DNO , count(*) as counting from Employee group by DNO;
+
+-- SELECT DNO , count(*) as counting from Employee group by DNO having count(*)>1;
+
+Alter table Employee
+DROP COLUMN SUPRESSN;
+
