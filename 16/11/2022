@@ -1,0 +1,57 @@
+-- create table actor (
+-- id INT,
+--   first_name varchar(255),
+--   last_name varchar(255),
+--   movie_id INT
+-- );
+-- insert into actor values(1, "Daam", "Smith" , 1);
+-- insert into actor values(3, "Susan", "Davidson" , 5);
+-- insert into actor values(4, "Jenny", "Adrianna" , 8);
+-- insert into actor values(6, "Lee", "Pong" , 10);
+-- insert into actor values(2, "Ravi", "Kumar" , 2);
+
+-- CREATE table movie (
+--   id INT,
+--   title varchar(255),
+--   category varchar(255)
+-- );
+
+-- insert inTo movie VALUES(1 , "ASSASSIN'S CREED:EMBERS", "Animations");
+-- insert into movie values (2 , "Real Steel(2012)" ,"Animations");
+-- Insert Into movie values ( 3, "Alvin and the Chimunks" , "Animations");
+-- insert Into movie values(4, "The Adventure of Tin Tin " , "Animations");
+-- Insert into movie Values(5, "Safe(2012)" , "Action");
+-- insert into movie Values (6, "Safe House(2012)" , "Action");
+-- Insert Into movie values (7, "GIA" , "18+");
+-- insert into movie values (8, "Deadline 2009" , "18+");
+-- insert into movie values (9, "The dirty picture" , "18+");
+-- insert into movie values (10 , "Marley and me ", "Romance");
+
+-- select * from actor;
+-- select * from movie;
+
+-- cross join
+select movie.id, movie.title, movie.category, actor.first_name from movie 
+cross join actor
+on movie.id = actor.movie_id;
+
+-- left join
+select movie.id, movie.title, movie.category, actor.first_name from movie 
+left join actor
+on movie.id = actor.movie_id;
+
+-- right join
+select movie.id, movie.title, movie.category, actor.first_name from movie 
+right join actor
+on movie.id = actor.movie_id;
+
+-- full outer join
+select movie.id, movie.title, movie.category, actor.first_name from movie 
+full outer join actor
+on movie.id = actor.movie_id;
+
+-- inner join
+select movie.id, movie.title, movie.category, actor.first_name from movie 
+inner join actor
+on movie.id = actor.movie_id;
+
